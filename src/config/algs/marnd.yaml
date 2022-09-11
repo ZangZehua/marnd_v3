@@ -1,0 +1,59 @@
+# --- immac specific parameters ---
+
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 50000
+
+# episode runner
+runner: "episode"
+t_max: 5050000
+
+# parallel runner
+# runner: "parallel"
+# batch_size_run: 8
+# t_max: 10050000
+
+buffer_size: 5000
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# use the Q_Learner to train
+agent_output_type: "q"
+double_q: True
+mixer: "qmix"
+mixing_embed_dim: 32
+hypernet_layers: 2
+hypernet_embed: 64
+
+# rnd generator
+rnd_hidden_dim: 64
+rnd_output_dim: 32
+threshold: 0.0
+
+# ngu config
+ngu_embedding_dim: 32
+
+# external importance
+ext_imp_hidden_dim: 16
+
+# weight between external importance and intrinsic importance
+ext_lambd: 1.0
+int_lambd: 1.0
+
+local_rnd_reward_lambda: 1.0
+global_rnd_reward_lambda: 1.0
+
+# loss
+#lambd: 1.0
+observation_normalization: True
+val_normalization: False
+observation_mask: True
+
+mac: "marnd_mac"
+agent: "marnd_agent"
+learner: "marnd_learner"
+
+name: "marnd"

@@ -1,0 +1,52 @@
+# --- immac specific parameters ---
+
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 50000
+
+# episode runner
+runner: "episode"
+t_max: 5050000
+
+# parallel runner
+# runner: "parallel"
+# batch_size_run: 8
+# t_max: 10050000
+
+buffer_size: 5000
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# use the Q_Learner to train
+agent_output_type: "q"
+double_q: True
+mixer: "qmix"
+mixing_embed_dim: 32
+hypernet_layers: 2
+hypernet_embed: 64
+
+# curiosity generator
+cur_hidden_dim: 64
+cur_output_dim: 32
+threshold: 0.0
+
+# external importance
+ext_imp_hidden_dim: 16
+
+# weight between external importance and intrinsic importance
+ext_lambd: 1.0
+int_lambd: 1.0
+# loss
+#lambd: 1.0
+observation_normalization: True
+val_normalization: False
+observation_mask: True
+
+mac: "immac_mac"
+agent: "immac_agent"
+learner: "immac_learner"
+
+name: "immac"
